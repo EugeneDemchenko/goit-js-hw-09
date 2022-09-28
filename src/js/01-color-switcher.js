@@ -9,12 +9,11 @@ startButton.addEventListener('click', colorSwitcherOn)
 stopButton.addEventListener('click', colorSwitcherOff)
 
 function colorSwitcherOn() {
-    stopButton.removeAttribute('disabled')
-    startButton.setAttribute('disabled', '')
-    timerID = setInterval(() => {
+    timerId = setInterval(() => {
        view.style.background = getRandomHexColor() 
     }, 1000);
-    
+    stopButton.removeAttribute('disabled')
+    startButton.setAttribute('disabled', '')
 }
 function colorSwitcherOff() {
     clearInterval(timerId);
